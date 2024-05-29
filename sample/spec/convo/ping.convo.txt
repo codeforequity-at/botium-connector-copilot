@@ -1,0 +1,7 @@
+ping chatbot
+
+#me
+ping
+
+#bot
+Some automate message
