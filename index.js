@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         name: 'COPILOT_POLLING_LIMIT',
-        label: 'Copilot polling interval',
+        label: 'Copilot polling limit',
         description: 'The maximum number of messages to fetch in one poll. High polling limit can cause performance issues on booth sides. Low polling limit can cause data loss. Default is 10.',
         type: 'int',
         required: false,
