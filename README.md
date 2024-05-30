@@ -58,7 +58,7 @@ _Already integrated into Botium Box, no setup required_
 You need a 
 - [Copilot API key](https://docs.copilot.com/reference/getting-started-introduction#if-you-are-building-any-other-type-of-api-integration)
 - Copilot Channel id (you can find it in the URL if you navigate to a channel in Copilot Dashboard. The URL will be: https://dashboard.copilot.com/messaging?channelId=messaging:<<channel id>>)
-- Copilot Client id (you can find it in the URL if you navigate to a client in Copilot Dashboard. The URL will be: https://dashboard.copilot.com/clients/users/details?clientUserId=<<user id>>)
+  - Copilot Client id (you can find it in the URL if you navigate to a client in Copilot Dashboard. The URL will be: https://dashboard.copilot.com/clients/users/details?clientUserId=<<user id>>)
 
 The botium.json file should look something like this:
 
@@ -98,10 +98,9 @@ Copilot Channel id
 Copilot Client id
 
 ### COPILOT_POLLING_INTERVAL
-Copilot-to-botium messages are read (polled) periodically. High interval can cause slow communication, low interval can cause reaching Copilot Api limits earlier. 
+The interval in milliseconds to poll for new messages. High interval can cause slow communication, low interval can cause reaching Copilot Api limits earlier. 
 _Default: 1000 (ms)_
 
 ### COPILOT_POLLING_LIMIT
-Copilot-to-Botium messages are read (polled) periodically in batch from Copilot history. The batch size is determined via this capability. 
-If the batch is very high, then it can cause performance issues on booth sides. If it is low, then it is possible to lose Copilot-to-Botium message
+The maximum number of messages to fetch in one poll. High polling limit can cause performance issues on booth sides. Low polling limit can cause data loss.
 _Default: 10

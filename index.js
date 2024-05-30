@@ -18,32 +18,41 @@ module.exports = {
     },
     capabilities: [
       {
-        name: 'QNAMAKER_KNOWLEDGEBASE_ID',
-        label: 'QnA Maker Knowledgebase ID',
-        description: 'In QnA Maker "My knowledge bases", click on "View Code" to see the knowledgebase id - "POST /knowledgebases/xxxxxxxxxxxxxxxxx/generateAnswer" (Copy&Paste the xxxxxx part)',
-        type: 'string',
-        required: true
-      },
-      {
-        name: 'QNAMAKER_RESOURCE_NAME',
-        label: 'QnA Maker Resource Name',
-        description: 'In QnA Maker "My knowledge bases", click on "View Code" to see the resource name - "Host: https://xxxxxxxxxxxx.azurewebsites.net/qnamaker" (Copy&Paste the xxxxxx part)',
-        type: 'string',
-        required: true
-      },
-      {
-        name: 'QNAMAKER_ENDPOINT_KEY',
-        label: 'QnA Maker Runtime Key',
-        description: 'In QnA Maker "My knowledge bases", click on "View Code" to see the runtime key - "Authorization: EndpointKey xxxxxxxxxxx" (Copy&Paste the xxxxxx part)',
+        name: 'COPILOT_API_KEY',
+        label: 'Copilot API key',
+        description: 'In Copilot navigate to Settings->API',
         type: 'secret',
         required: true
       },
       {
-        name: 'QNAMAKER_RESOURCE_KEY',
-        label: 'QnA Maker Authoring/Subscription Key',
-        description: 'In the Azure Portal, find these keys on the Cognitive Services resource on the Keys and Endpoint page. (only needed if using the Test Case Wizard)',
-        type: 'secret',
-        required: false
+        name: 'COPILOT_CHANNEL_ID',
+        label: 'Copilot Channel id',
+        description: 'You can find it in the URL if you navigate to a channel in Copilot Dashboard. The URL will be: https://dashboard.copilot.com/messaging?channelId=messaging:<<channel id>>',
+        type: 'string',
+        required: true
+      },
+      {
+        name: 'COPILOT_SENDER_ID',
+        label: 'Copilot Client id',
+        description: 'You can find it in the URL if you navigate to a client in Copilot Dashboard. The URL will be: https://dashboard.copilot.com/clients/users/details?clientUserId=<<user id>>',
+        type: 'string',
+        required: true
+      },
+      {
+        name: 'COPILOT_POLLING_INTERVAL',
+        label: 'Copilot polling interval',
+        description: 'The interval in milliseconds to poll for new messages. High interval can cause slow communication, low interval can cause reaching Copilot Api limits earlier. Default is 1000',
+        type: 'int',
+        required: false,
+        advanced: true
+      },
+      {
+        name: 'COPILOT_POLLING_LIMIT',
+        label: 'Copilot polling interval',
+        description: 'The maximum number of messages to fetch in one poll. High polling limit can cause performance issues on booth sides. Low polling limit can cause data loss. Default is 10.',
+        type: 'int',
+        required: false,
+        advanced: true
       }
     ]
   }
