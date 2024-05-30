@@ -41,7 +41,7 @@ module.exports = {
       {
         name: 'COPILOT_POLLING_INTERVAL',
         label: 'Copilot polling interval',
-        description: 'The interval in milliseconds to poll for new messages. High interval can cause slow communication, low interval can cause reaching Copilot Api limits earlier. Default is 1000',
+        description: 'The interval in milliseconds to poll for new messages. High interval can cause slow communication, low interval can cause reaching Copilot Api limits earlier. Default is 1000 ms',
         type: 'int',
         required: false,
         advanced: true
