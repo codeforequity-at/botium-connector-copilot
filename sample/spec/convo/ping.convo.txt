@@ -4,4 +4,3 @@ ping chatbot
 ping
 
 #bot
-Some automate message
