@@ -1,6 +1,6 @@
 {
   "name": "botium-connector-copilot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/botium-connector-qnamaker-cjs.js",
   "module": "dist/botium-connector-copilot-es.js",
