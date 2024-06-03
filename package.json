@@ -6,7 +6,7 @@
   "module": "dist/botium-connector-copilot-es.js",
   "scripts": {
     "build": "npm run eslint && rollup -c",
-    "eslint": "eslint index.js src bin",
+    "eslint": "eslint index.js src",
     "eslint-fix": "eslint --fix index.js src"
   },
   "repository": {
