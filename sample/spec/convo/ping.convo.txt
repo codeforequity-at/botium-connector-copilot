@@ -1,6 +1,12 @@
-ping chatbot
+Talk with chatbot about botium
 
 #me
-ping
+Hello
 
 #bot
+
+#me
+Tell me about botium.
+
+#bot
+Botium is a tool designed for testing conversational AI

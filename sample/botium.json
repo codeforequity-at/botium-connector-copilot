@@ -3,9 +3,7 @@
     "Capabilities": {
       "PROJECTNAME": "botium-copilot-sample",
       "CONTAINERMODE": "copilot",
-      "COPILOT_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx",
-      "COPILOT_CHANNEL_ID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-      "COPILOT_SENDER_ID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      "COPILOT_SECRET": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxx"
     }
   }
 }
