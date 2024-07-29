@@ -1,0 +1,14 @@
+TC buttons
+
+#me
+buttons
+
+#bot
+Are you sure?
+BUTTONS yes|no
+
+#me
+BUTTON yes
+
+#bot
+you have choosen yes

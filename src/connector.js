@@ -3,10 +3,15 @@ const debug = require('debug')('botium-connector-copilot')
 const DirectlineConnector = require('botium-connector-directline3').PluginClass
 const util = require('util')
 
+const Defaults = {
+  COPILOT_BUTTON_TYPE: 'message',
+  COPILOT_BUTTON_VALUE_FIELD: 'text'
+}
+
 class BotiumConnectorCopilot {
   constructor ({ queueBotSays, caps }) {
     this.queueBotSays = queueBotSays
-    this.caps = caps
+    this.caps = { ...Defaults, ...caps }
     this.delegateConnector = null
     this.delegateCaps = null
   }
