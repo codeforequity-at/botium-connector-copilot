@@ -1,4 +1,5 @@
 const debug = require('debug')('botium-connector-copilot')
+const _ = require('lodash')
 
 const DirectlineConnector = require('botium-connector-directline3').PluginClass
 const util = require('util')
@@ -11,7 +12,7 @@ const Defaults = {
 class BotiumConnectorCopilot {
   constructor ({ queueBotSays, caps }) {
     this.queueBotSays = queueBotSays
-    this.caps = { ...Defaults, ...caps }
+    this.caps = caps
     this.delegateConnector = null
     this.delegateCaps = null
   }
@@ -54,12 +55,17 @@ class BotiumConnectorCopilot {
 
   _getDelegate () {
     if (!this.delegateConnector) {
+      const tempCaps = Object.assign({}, Defaults, _.pickBy(this.caps, (value, key) => !Object.prototype.hasOwnProperty.call(Defaults, key) || !_.isString(value) || value !== ''))
       this.delegateCaps = {}
-      for (const capName of Object.keys(this.caps).filter(capName => capName.startsWith('COPILOT_'))) {
-        this.delegateCaps[capName.replace('COPILOT_', 'DIRECTLINE3_')] = this.caps[capName]
+
+      for (const capName of Object.keys(tempCaps)) {
+        if (capName.startsWith('COPILOT_')) {
+          this.delegateCaps[capName.replace('COPILOT_', 'DIRECTLINE3_')] = tempCaps[capName]
+        } else {
+          this.delegateCaps[capName] = this.caps[capName]
+        }
       }
       debug(`delegateCaps ${util.inspect(this.delegateCaps)}`)
-      this.delegateCaps = Object.assign({}, this.caps, this.delegateCaps)
       this.delegateConnector = new DirectlineConnector({ queueBotSays: this.queueBotSays, caps: this.delegateCaps })
     }
     return this.delegateConnector
