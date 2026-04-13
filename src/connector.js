@@ -1,8 +1,10 @@
-const debug = require('debug')('botium-connector-copilot')
-const _ = require('lodash')
+import createDebug from 'debug'
+import _ from 'lodash'
+import util from 'util'
+import directline3 from 'botium-connector-directline3'
 
-const DirectlineConnector = require('botium-connector-directline3').PluginClass
-const util = require('util')
+const debug = createDebug('botium-connector-copilot')
+const DirectlineConnector = directline3.PluginClass
 
 const Defaults = {
   COPILOT_BUTTON_TYPE: 'message',
@@ -72,4 +74,4 @@ class BotiumConnectorCopilot {
   }
 }
 
-module.exports = BotiumConnectorCopilot
+export default BotiumConnectorCopilot
