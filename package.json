@@ -15,7 +15,6 @@
   "scripts": {
     "build": "rollup -c && cp logo.ico dist",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run build",
     "eslint": "eslint index.js src",
     "eslint-fix": "eslint --fix index.js src",
     "test": "echo \"Placeholder\""

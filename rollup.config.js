@@ -1,8 +1,9 @@
 import json from '@rollup/plugin-json'
+import * as path from 'node:path'
 
 export default {
   input: 'index.js',
-  external: (id) => !id.startsWith('.') && !id.startsWith('/') && !id.startsWith('\0'),
+  external: (id) => !id.startsWith('.') && !path.isAbsolute(id) && !id.startsWith('\0'),
   output: [
     {
       file: 'dist/botium-connector-copilot-es.js',
