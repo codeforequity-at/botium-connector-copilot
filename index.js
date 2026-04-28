@@ -1,11 +1,14 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import PluginClass from './src/connector.js'
 
-const PluginClass = require('./src/connector')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const logo = fs.readFileSync(path.join(__dirname, 'logo.ico')).toString('base64')
 
-module.exports = {
+export default {
   PluginVersion: 1,
   PluginClass: PluginClass,
   PluginDesc: {
